@@ -16,6 +16,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.Kategoris.ToList();
             return View(degerler);
         }
+        [HttpGet]
         public ActionResult KategoriEkle()
         {
             
@@ -49,5 +50,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+      
     }
 }
