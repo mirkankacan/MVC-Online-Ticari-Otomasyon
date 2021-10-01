@@ -10,12 +10,13 @@
 @using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
 {
 
-    <div class="form-group">
+<div class="form-group">
 
-        @Html.HiddenFor(x => x.Departmanid, new { @class = "form-control" })
-        @Html.Label("Departman Adı")
-        @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
-    </div>
+    @Html.HiddenFor(x => x.Departmanid, new { @class = "form-control" })
+    @Html.Label("Departman Adı")
+    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.DepartmanAd, "", new { @style = "color:red" })
+</div>
     <br />
 
     <td> <button class="btn btn-warning">Güncelle</button></td>

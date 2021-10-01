@@ -19,23 +19,34 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult UrunEkle()
         {
-            List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
-                                           select new SelectListItem
-                                           {
-                                               Text = x.KategoriAd,
-                                               Value = x.KategoriID.ToString()
-                                           }).ToList();
-            ViewBag.dgr1 = deger1;
-            return View();
+           
+
+                List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.KategoriAd,
+                                                   Value = x.KategoriID.ToString()
+                                               }).ToList();
+                ViewBag.dgr1 = deger1;
+                return View();
+         
+          
         }
         [HttpPost]
         public ActionResult UrunEkle(Urun u)
         {
-            c.Uruns.Add(u);
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                c.Uruns.Add(u);
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("UrunEkle");
+            }
         }
-        
+     
         public ActionResult UrunSil(int id)
         {
             var sil = c.Uruns.Find(id);
@@ -57,17 +68,24 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult UrunGuncelle(Urun u)
         {
-            var guncel = c.Uruns.Find(u.Urunid);
-            guncel.Urunad = u.Urunad;
-            guncel.Marka = u.Marka;
-            guncel.Stok = u.Stok;
-            guncel.AlisFiyat = u.AlisFiyat;
-            guncel.SatisFiyat = u.SatisFiyat;
-            guncel.Kategoriid = u.Kategoriid;
-            guncel.UrunGorsel = u.UrunGorsel;
-            guncel.Durum = u.Durum;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var guncel = c.Uruns.Find(u.Urunid);
+                guncel.Urunad = u.Urunad;
+                guncel.Marka = u.Marka;
+                guncel.Stok = u.Stok;
+                guncel.AlisFiyat = u.AlisFiyat;
+                guncel.SatisFiyat = u.SatisFiyat;
+                guncel.UrunGorsel = u.UrunGorsel;
+                guncel.Durum = u.Durum;
+                guncel.Kategoriid = u.Kategoriid;
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("UrunGetir");
+            }
         }
     }
 }

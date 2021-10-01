@@ -12,7 +12,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Key]
         public int Departmanid { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter girebilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string DepartmanAd { get; set; }
         public bool Durum { get; set; }
         public ICollection<Personel> Personels{ get; set; }

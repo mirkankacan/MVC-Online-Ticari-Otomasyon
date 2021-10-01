@@ -12,7 +12,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Key]
         public int KategoriID { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter girebilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string KategoriAd { get; set; }
         public ICollection<Urun> Uruns { get; set; }
     }

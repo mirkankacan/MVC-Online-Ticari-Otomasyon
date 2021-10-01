@@ -24,14 +24,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult CariEkle(Cariler car)
         {
-
-            c.Carilers.Add(car);
-            c.SaveChanges();
-            return RedirectToAction("Index");
-
+            if (ModelState.IsValid)
+            {
+                c.Carilers.Add(car);
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("CariEkle");
+            }
         }
         public ActionResult CariSil(int id)
         {
+
             var sil = c.Carilers.Find(id);
             c.Carilers.Remove(sil);
             c.SaveChanges();
@@ -44,6 +50,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult CariGuncelle(Cariler car)
         {
+            if(ModelState.IsValid)
+            { 
             var guncel = c.Carilers.Find(car.Cariid);
             guncel.CariAd = car.CariAd;
             guncel.CariSoyad = car.CariSoyad;
@@ -51,7 +59,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             guncel.CariMail = car.CariMail;
             c.SaveChanges();
             return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("CariGetir");
+               
+            }
         }
+        
      
     }
 }

@@ -12,7 +12,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Key]
         public int FaturaKalemid { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(100)]
+        [StringLength(100, ErrorMessage = "En fazla 100 karakter girebilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public string Aciklama { get; set; }
         public int Miktar { get; set; }
         public decimal BirimFiyat { get; set; }

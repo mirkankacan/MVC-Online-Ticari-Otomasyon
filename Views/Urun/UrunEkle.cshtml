@@ -10,38 +10,52 @@
 <form class="form-group" method="post">
 
     @Html.Label("Ürün Adı")
-           @Html.TextBoxFor(x => x.Urunad, new  { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Urunad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Urunad, "", new { @style = "color:red" })
+
     <br />
-        
-              @Html.Label("Marka")
-              @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
-          
-<br />
-       
-             @Html.Label("Stok")
-           @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
-     
-<br />
-            @Html.Label("Alış Fiyatı")
-              @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
-<br />
-       
-             @Html.Label("Satış Fiyatı")
-             @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
-       
-<br />
-             @Html.Label("Kategori ID")
-    @Html.DropDownListFor(x=>x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new {@class="form-control"})
-           @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
-<br />
-       
-            @Html.Label("Ürün Görseli")
-             @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
-<br />
-             @Html.Label("Durumu")
-            @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
-<br />
-                <button class="btn btn-success">Kaydet</button>
-  
+
+    @Html.Label("Marka")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Marka, "", new { @style = "color:red" })
+
+    <br />
+
+    @Html.Label("Stok")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Stok, "", new { @style = "color:red" })
+
+
+    <br />
+    @Html.Label("Alış Fiyatı")
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AlisFiyat, "", new { @style = "color:red" })
+
+    <br />
+
+    @Html.Label("Satış Fiyatı")
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SatisFiyat, "", new { @style = "color:red" })
+
+
+    <br />
+    @Html.Label("Kategori ID")
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Kategoriid, "", new { @style = "color:red" })
+    
+    <br />
+
+    @Html.Label("Ürün Görseli")
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UrunGorsel, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Durumu")
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Durum, "", new { @style = "color:red" })
+
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+
 </form>
 

@@ -11,7 +11,8 @@
         <th>CARİ ADI</th>
         <th>CARİ SOYADI</th>
         <th>CARİ ŞEHİRİ</th>
-        <th>CARİ MAİLİ</th>
+        <th>CARİ E-POSTA</th>
+        <th style="color:darkmagenta">DETAYLAR</th>
         <th style="color:darkred">SİL</th>
         <th style="color:darkgoldenrod">GÜNCELLE</th>
     </tr>
@@ -32,8 +33,11 @@
     <td>
         @car.CariMail
     </td>
+    <td><a href="/Cariler/CariDetay/@car.Cariid" class="btn btn-info" style="background-color:mediumpurple">Cari Detayı</a></td>
+
     <td><a href="/Cariler/CariSil/@car.Cariid" class="btn btn-danger">Sil</a></td>
     <td><a href="/Cariler/CariGetir/@car.Cariid" class="btn btn-warning">Güncelle</a></td>
+
 </tr>
     }
 </table>

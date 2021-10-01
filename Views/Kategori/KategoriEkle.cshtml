@@ -8,11 +8,13 @@
 <br />
 
 <form class="form-group" method="post">
-   
-    
-            @Html.Label("Kategori Adı")
 
-             @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+
+    @Html.Label("Kategori Adı")
+
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.KategoriAd, "", new { @style = "color:red" })
+
     <br />
     <button class="btn btn-success">Kaydet</button>
 

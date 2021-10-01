@@ -25,11 +25,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult KategoriEkle(Kategori k)
         {
-             
+            if (ModelState.IsValid)
+            {
                 c.Kategoris.Add(k);
                 c.SaveChanges();
                 return RedirectToAction("Index");
- 
+            }
+            else
+            {
+                return View("KategoriEkle");
+            }
         }
         public ActionResult KategoriSil(int id)
         {
@@ -45,10 +50,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult KategoriGuncelle(Kategori k)
         {
-            var guncel = c.Kategoris.Find(k.KategoriID);
-            guncel.KategoriAd = k.KategoriAd;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var guncel = c.Kategoris.Find(k.KategoriID);
+                guncel.KategoriAd = k.KategoriAd;
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("KategoriGetir");
+            }
         }
       
     }

@@ -24,11 +24,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
         {
-
-            c.Departmans.Add(d);
-            c.SaveChanges();
-            return RedirectToAction("Index");
-
+            if (ModelState.IsValid)
+            {
+                c.Departmans.Add(d);
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("DepartmanEkle");
+            }
         }
         public ActionResult DepartmanSil(int id)
         {
@@ -44,10 +49,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanGuncelle(Departman d)
         {
-            var guncel = c.Departmans.Find(d.Departmanid);
-            guncel.DepartmanAd = d.DepartmanAd;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var guncel = c.Departmans.Find(d.Departmanid);
+                guncel.DepartmanAd = d.DepartmanAd;
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("DepartmanGetir");
+            }
         }
         public ActionResult DepartmanDetay(int id)
         {
@@ -59,7 +71,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult DepartmanPersonelSatis(int id)
         {
-            return View();
+            var degerler = c.SatisHarekets.Where(x => x.Personelid == id).ToList();
+            var dpers = c.Personels.Where(x => x.Personelid == id).Select(y => y.PersonelAd).FirstOrDefault();
+            ViewBag.dpers = dpers;
+            return View(degerler);
         }
     }
 }

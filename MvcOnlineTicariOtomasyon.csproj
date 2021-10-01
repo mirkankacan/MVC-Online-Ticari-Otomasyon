@@ -159,6 +159,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Gizlilik.html" />
+    <Content Include="Terms.html" />
     <Content Include="web\dist\401.html" />
     <Content Include="web\dist\404.html" />
     <Content Include="web\dist\500.html" />
