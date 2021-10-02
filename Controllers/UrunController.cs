@@ -68,6 +68,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult UrunGuncelle(Urun u)
         {
+           
+            
             if (ModelState.IsValid)
             {
                 var guncel = c.Uruns.Find(u.Urunid);
@@ -84,6 +86,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             else
             {
+                
                 return View("UrunGetir");
             }
         }

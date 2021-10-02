@@ -19,6 +19,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(6, ErrorMessage = "En fazla 6 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public string FaturaSıraNo { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Tarih{ get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(60, ErrorMessage = "En fazla 60 karakter girebilirsiniz!")]

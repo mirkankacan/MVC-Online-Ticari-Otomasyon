@@ -18,7 +18,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult CariEkle()
         {
-
             return View();
         }
         [HttpPost]
@@ -62,11 +61,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             else
             {
+
                 return View("CariGetir");
                
             }
         }
-        
-     
+        public ActionResult MusteriSatis(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
+           
+            var carr = c.Carilers.Where(x => x.Cariid == id).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.car = carr;
+            return View(degerler);
+        }
+
+
     }
 }

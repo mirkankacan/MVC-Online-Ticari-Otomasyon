@@ -10,7 +10,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
     {
         [Key]
         public int Satisid{ get; set; }
-     
+        [DataType(DataType.Date)]
         public DateTime Tarih{ get; set; }
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }

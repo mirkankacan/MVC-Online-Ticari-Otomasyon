@@ -14,6 +14,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(100, ErrorMessage = "En fazla 100 karakter girebilirsiniz!")]
         public string Aciklama { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Tarih { get; set; }
         public decimal Tutar { get; set; }
     }
