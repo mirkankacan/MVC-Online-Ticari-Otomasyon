@@ -16,11 +16,13 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
 
         public string KullaniciAd { get; set; }
+
         [Column(TypeName = "Varchar")]
         [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
 
         public string Sifre { get; set; }
+
         [Column(TypeName = "Char")]
         [StringLength(1, ErrorMessage = "En fazla 1 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]

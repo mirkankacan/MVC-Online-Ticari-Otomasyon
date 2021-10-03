@@ -31,22 +31,67 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
-            c.Personels.Add(p);
+            if (ModelState.IsValid)
+            { 
+                c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+            else
+            {
+                List<SelectListItem> deger1 = (from x in c.Departmans.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.DepartmanAd,
+                                                   Value = x.Departmanid.ToString()
+                                               }).ToList();
+                ViewBag.dgr1 = deger1;
+
+                return View("PersonelEkle");
+            }
+        }
         public ActionResult PersonelGetir(int id)
         {
-            var prs = c.Personels.Find(id);
-            return RedirectToAction("PersonelGetir",prs);
+            List<SelectListItem> deger1 = (from x in c.Departmans.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.DepartmanAd,
+                                               Value = x.Departmanid.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
+             var bul = c.Personels.Find(id);
+            return View("PersonelGetir", bul);
         }
         public ActionResult PersonelGuncelle(Personel p)
         {
-            var guncel = c.Personels.Find(p.Personelid);
-            guncel.PersonelAd = p.PersonelAd;
-            guncel.PersonelSoyad = p.PersonelSoyad;
-            guncel.PersonelGorsel = p.PersonelGorsel;
-            guncel.Departmanid = p.Departmanid;
+            if (ModelState.IsValid)
+            {
+                var guncel = c.Personels.Find(p.Personelid);
+                guncel.PersonelAd = p.PersonelAd;
+                guncel.PersonelSoyad = p.PersonelSoyad;
+                guncel.PersonelGorsel = p.PersonelGorsel;
+                guncel.Departmanid = p.Departmanid;
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                List<SelectListItem> deger1 = (from x in c.Departmans.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.DepartmanAd,
+                                                   Value = x.Departmanid.ToString()
+                                               }).ToList();
+                ViewBag.dgr1 = deger1;
+                return View("PersonelGetir");
+            }
+          
+        }
+
+        public ActionResult PersonelSil(int id)
+        {
+            var sil = c.Personels.Find(id);
+            c.Personels.Remove(sil);
             c.SaveChanges();
             return RedirectToAction("Index");
         }

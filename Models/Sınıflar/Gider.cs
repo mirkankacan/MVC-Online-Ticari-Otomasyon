@@ -15,6 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(100, ErrorMessage = "En fazla 100 karakter girebilirsiniz!")]
         public string Aciklama { get; set; }
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public DateTime Tarih { get; set; }
         public decimal Tutar { get; set; }
     }

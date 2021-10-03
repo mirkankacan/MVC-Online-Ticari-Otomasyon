@@ -40,10 +40,7 @@
 
     <br />
     @Html.Label("Kategori")
- 
     @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
-
-        @Html.ValidationMessageFor(x => x.Kategoriid, "", new { @style = "color:red" })
     
     <br />
 

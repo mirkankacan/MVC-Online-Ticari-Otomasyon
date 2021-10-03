@@ -15,8 +15,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(100, ErrorMessage = "En fazla 100 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public string Aciklama { get; set; }
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public int Miktar { get; set; }
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public decimal BirimFiyat { get; set; }
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public decimal Tutar { get; set; }
         public Faturalar Faturalar { get; set; }
     }

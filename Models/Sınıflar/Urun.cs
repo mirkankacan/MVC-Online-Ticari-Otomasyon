@@ -31,9 +31,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(250, ErrorMessage = "En fazla 250 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string UrunGorsel { get; set; }
-        [Required(ErrorMessage = "Seçim yapmalısınız!")]
         public int Kategoriid { get; set; }
-        [Required]
         public virtual Kategori Kategori { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }

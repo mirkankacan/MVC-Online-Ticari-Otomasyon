@@ -11,25 +11,24 @@
 @using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
 {
 
-    <div class="form-group">
+<div class="form-group">
 
-        @Html.HiddenFor(x => x.Personelid, new { @class = "form-control" })
-        @Html.Label("Personel Adı")
-        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
-        <br />
-        @Html.Label("Personel Soyadı")
-        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.PersonelSoyad, "", new { @style = "color:red" })
-        <br />
-        @Html.Label("Görsel")
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
-        <br />
-        @Html.Label("Departman")
-        @Html.TextBoxFor(x => x.Departmanid, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" })
-        <br />
-    </div>
+    @Html.HiddenFor(x => x.Personelid, new { @class = "form-control" })
+    @Html.Label("Personel Adı")
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Personel Soyadı")
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelSoyad, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Görsel")
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.Departman.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+</div>
     <br />
 
     <td> <button class="btn btn-warning">Güncelle</button></td>

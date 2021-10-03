@@ -15,6 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(30, ErrorMessage = "En fazla 30 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string DepartmanAd { get; set; }
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public bool Durum { get; set; }
         public ICollection<Personel> Personels{ get; set; }
     }
