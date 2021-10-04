@@ -75,8 +75,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult UrunGuncelle(Urun u)
         {
-           
-            
             if (ModelState.IsValid)
             {
                 var guncel = c.Uruns.Find(u.Urunid);

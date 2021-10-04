@@ -1,0 +1,47 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Güncelleme</h2>
+<br />
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x=>x.Satisid)
+    @Html.Label("Ürün Adı")
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Cari")
+    @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Fiyat, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Adet")
+    @Html.TextBoxFor(x=>x.Adet, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Adet, "", new { @style = "color:red" })
+
+    <br />
+    @Html.Label("Toplam Tutar")
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ToplamTutar, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Tarih")
+ @Html.TextBoxFor(x =>x.Tarih, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })
+</div>
+    <br />
+
+    <td> <button class="btn btn-warning">Güncelle</button></td>
+
+
+}
