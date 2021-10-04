@@ -1,0 +1,55 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+
+
+    @Html.Label("Seri No")
+
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FaturaSeriNo, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Sıra No")
+
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FaturaSıraNo, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Vergi Dairesi")
+
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.VergiDairesi, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Tarih")
+
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Saat")
+
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Saat, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Toplam")
+
+    @Html.TextBoxFor(x => x.Toplam, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Toplam, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Teslim Eden")
+
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.TeslimEden, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Teslim Alan")
+
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.TeslimAlan, "", new { @style = "color:red" })
+    <br />
+
+    <button class="btn btn-success">Kaydet</button>
+
+</form>
