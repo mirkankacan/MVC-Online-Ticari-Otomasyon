@@ -8,10 +8,10 @@
 <h2>Departman Personel Satış</h2>
 <br />
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active" style="color:olive;font-size:20px">Personel Adı: @ViewBag.dpers</li>
+    <li class="breadcrumb-item active" style="color:olive;font-size:20px;">Personel Adı: @ViewBag.dpers</li>
 </ol>
 
-<table class="table table-condensed">
+<table class="table table-condensed"style="text-align: center">
     <tr>
         <th>SATIŞ ID</th>
         <th>ÜRÜN</th>
@@ -32,7 +32,7 @@
     <td>@x.Adet</td>
     <td>@x.ToplamTutar</td>
     <td>@x.Tarih</td>
-    <td><a href="#" class="btn btn-default" style="background-color:cornflowerblue;">Yazdır</a></td>
+    <td><a href="/Urun/UrunListesi" class="btn btn-default" style="background-color:cornflowerblue;">Yazdır</a></td>
 </tr>
     }
 </table>

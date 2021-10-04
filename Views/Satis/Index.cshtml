@@ -6,7 +6,7 @@
 
 }
 
-<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+<table id="tbl1" class="table table-bordered" style="margin-top:20px;text-align:center">
     <thead>
         <tr>
             <th>SATIŞ ID</th>
@@ -21,26 +21,29 @@
             <th style="color:darkgoldenrod">GÜNCELLE</th>
         </tr>
     </thead>
-    @foreach (var sat in Model)
-    {
+    <tbody>
+        @foreach (var sat in Model)
+        {
 
-        <tr>
-            <td>        @sat.Satisid  </td>
-            <td>        @sat.Urun.Urunad  </td>
-            <td>       @sat.Personel.PersonelAd @sat.Personel.PersonelSoyad  </td>
-            <td>      @sat.Cariler.CariAd @sat.Cariler.CariSoyad  </td>
-            <td>    @sat.Fiyat  </td>
-            <td>    @sat.Adet  </td>
+            <tr>
+                <td> @sat.Satisid  </td>
+                <td>  @sat.Urun.Urunad  </td>
+                <td> @sat.Personel.PersonelAd @sat.Personel.PersonelSoyad  </td>
+                <td>  @sat.Cariler.CariAd @sat.Cariler.CariSoyad  </td>
+                <td> @sat.Fiyat  </td>
+                <td>  @sat.Adet  </td>
 
-            <td>    @sat.ToplamTutar  </td>
+                <td>    @sat.ToplamTutar  </td>
 
-            <td> @sat.Tarih.ToShortDateString()</td>
+                <td> @sat.Tarih.ToShortDateString()</td>
 
-            <td><a href="/Satis/SatisDetay/@sat.Satisid" class="btn btn-info" style="background-color:mediumpurple">Detaylar</a></td>
-            <td><a href="/Satis/SatisGetir/@sat.Satisid" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Satis/SatisDetay/@sat.Satisid" class="btn btn-info" style="background-color:mediumpurple">Detaylar</a></td>
+                <td><a href="/Satis/SatisGetir/@sat.Satisid" class="btn btn-warning">Güncelle</a></td>
 
-        </tr>
-    }
+            </tr>
+
+        }
+    </tbody>
 </table>
 <a href="/Satis/YeniSatis" class="btn btn-success">Yeni Satış Yap</a>
 
