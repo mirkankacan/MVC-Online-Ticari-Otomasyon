@@ -23,9 +23,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public DateTime Tarih{ get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(60, ErrorMessage = "En fazla 60 karakter girebilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public string VergiDairesi{ get; set; }
         [Column(TypeName ="Char")]
         [StringLength(5, ErrorMessage ="En fazla 5 karakter girebilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz")]
         public string Saat { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30, ErrorMessage = "En fazla 30 karakter girebilirsiniz!")]

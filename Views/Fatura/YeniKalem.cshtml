@@ -1,0 +1,38 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Fatura Kalem Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+
+
+    @Html.Label("Açıklama")
+
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Miktar")
+
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Miktar, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Birim Fiyat")
+
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BirimFiyat, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Tutar")
+
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tutar, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Fatura ID")
+    @Html.TextBoxFor(x => x.Faturaid, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Faturaid, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+
+</form>
