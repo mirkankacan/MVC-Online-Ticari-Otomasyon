@@ -1,6 +1,6 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
 
-@model List<Urun>
+@model List<SatisHareket>
 
 @{
     Layout = null;
@@ -35,20 +35,20 @@
 
             <tr>
 
-                <th>ÜRÜN ID</th>
+                <th>SATIŞ ID</th>
 
-                <th>ADI</th>
+                <th>URUN</th>
 
-                <th>MARKA</th>
+                <th>PERSONEL</th>
 
-                <th>STOK</th>
+                <th>FİYAT</th>
 
-                <th>ALIŞ FİYATI</th>
+                <th>ADET</th>
 
-                <th>SATIŞ FİYATI</th>
+                <th>TOPLAM</th>
 
-                <th>KATEGORİ</th>
-                <th>DURUMU</th>
+                <th>TARİH</th>
+    
             </tr>
 
         </thead>
@@ -61,21 +61,21 @@
 
                 <tr>
 
-                    <td>@x.Urunid</td>
+                    <td>@x.Satisid</td>
 
-                    <td>@x.Urunad</td>
+                    <td>@x.Urun.Urunad</td>
 
-                    <td>@x.Marka</td>
+                    <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
 
-                    <td>@x.Stok</td>
+                    <td>@x.Fiyat</td>
 
-                    <td>@x.AlisFiyat</td>
+                    <td>@x.Adet</td>
 
-                    <td>@x.SatisFiyat</td>
+                    <td>@x.ToplamTutar</td>
 
-                    <td>@x.Kategori.KategoriAd</td>
+                    <td>@x.Tarih</td>
 
-                    <td>@x.Durum</td>
+                 
 
                 </tr>
 

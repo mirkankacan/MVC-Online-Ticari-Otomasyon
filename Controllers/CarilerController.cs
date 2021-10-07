@@ -74,7 +74,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.car = carr;
             return View(degerler);
         }
+        
+        public ActionResult CariListele(int id)
+        {
+            var degerler = c.SatisHarekets.Find(id);
+       
+            return View(degerler);
+            }
+        }
 
-
-    }
 }
+
