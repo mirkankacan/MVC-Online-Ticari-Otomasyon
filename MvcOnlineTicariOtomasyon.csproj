@@ -155,6 +155,8 @@
     <Compile Include="Models\Sınıflar\Kategori.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
     <Compile Include="Models\Sınıflar\SatisHareket.cs" />
+    <Compile Include="Models\Sınıflar\SinifGrup.cs" />
+    <Compile Include="Models\Sınıflar\SinifGrup2.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -3379,6 +3381,8 @@
     <Content Include="thumber\scss\_site-blocks.scss" />
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
+    <Content Include="Views\istatistik\KolayTablolar.cshtml" />
+    <Content Include="Views\istatistik\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

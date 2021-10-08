@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Sınıflar.SinifGrup2>
+   
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width:533px">
+                    <div class="card-header">
+                        <h3 class="card-title">Departman </h3> <br /><h12 style="color:#a10019">Bu tablo PartialView ile eklenmiştir</h12>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-bordered" style="text-align:center ">
+
+                            @{ int sayac = 0;}
+                            @foreach (var item in Model)
+                            {
+                                <thead>
+                                    <tr>
+                                        <th style="width:1%">#</th>
+                                        <th>DEPARTMAN</th>
+                                        <th style="width:50%">ADET</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @{sayac++;}
+                                        <td>@sayac</td>
+                                        <td>@item.Departman</td>
+                                        @if (item.Sayi == 1)
+                                        {
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-danger" style="width:@item.Sayi%"></div>
+                                                </div>
+                                            </td>
+                                        }
+                                        @if (item.Sayi == 2)
+                                        {
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-warning" style="width: @item.Sayi%"></div>
+                                                </div>
+                                            </td>
+                                        }
+                                        @if (item.Sayi >= 3)
+                                        {
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-success" style="width: @item.Sayi%"></div>
+                                                </div>
+                                            </td>
+                                        }
+                                    </tr>
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
