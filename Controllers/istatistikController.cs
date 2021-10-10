@@ -62,13 +62,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public PartialViewResult Partial1()
         {
-            var sorgu2 = from x in c.Personels group x by x.Departmanid into g select new SinifGrup2
+            var sorgu2 = from x in c.Personels group x by x.Departman.DepartmanAd into g select new SinifGrup2
             {
                 Departman = g.Key,
                 Sayi = g.Count()
             };
             return PartialView(sorgu2.ToList());
         }
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Carilers.ToList();
+            return PartialView(sorgu);
+        }
+       
+       
     }
 
 }
