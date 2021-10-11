@@ -1,0 +1,18 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Cariler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2>Cari Bilgi Paneli</h2>
+<br />
+@using(Html.BeginForm("Index2","CariPanel",FormMethod.Post))
+            {
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <label>Mail Adresi: @HttpContext.Current.User.Identity.Name</label>
+                        </td>
+                    </tr>
+                </table>
+            }

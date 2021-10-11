@@ -27,6 +27,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(50, ErrorMessage = "En fazla 50 karakter girebilirsiniz!")]
         [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string CariMail { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(20, ErrorMessage = "En fazla 50 karakter girebilirsiniz!")]
+       
+        public string CariSifre { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 
     }

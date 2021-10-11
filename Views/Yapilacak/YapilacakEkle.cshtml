@@ -1,0 +1,24 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.ToDo
+@{
+    ViewBag.Title = "YapilacakEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Yapılacak Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.Label("Yapılacak")
+    @Html.TextBoxFor(x => x.Yapılacak, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Yapılacak, "", new { @style = "color:red" })
+
+    <br />
+
+    
+    <button class="btn btn-success">Kaydet</button>
+
+</form>
+
+
