@@ -33,6 +33,13 @@
     @Html.TextBoxFor(x => x.Faturaid, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.Faturaid, "", new { @style = "color:red" })
     <br />
-    <button class="btn btn-success">Kaydet</button>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <button class="btn btn-success" id="btn1">Kaydet</button>
+    <script>
+        $('#btn1').click(function () {
+            swal("Kayıt başarıyla yapıldı.");
+        })
+    </script>
 
 </form>

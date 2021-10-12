@@ -7,9 +7,9 @@
 <br />
 <h2>Yeni Personel Sayfası</h2>
 <br />
-
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 <form class="form-group" method="post">
-
     @Html.Label("Personel Adı")
     @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
@@ -23,14 +23,22 @@
     <br />
 
     @Html.Label("Görsel")
-    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
-
+    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
     <br />
+    <input type="file" name="PersonelGorsel" />
+    <br /> <br />
     @Html.Label("Departman")
-    @Html.DropDownListFor(x=>x.Departmanid,(List<SelectListItem>)ViewBag.dgr1, new { @class="form-control"})
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
     <br />
-    <button class="btn btn-success">Kaydet</button>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <button class="btn btn-success" id="btn1">Kaydet</button>
+    <script>
+        $('#btn1').click(function () {
+            swal("Kayıt başarıyla yapıldı.");
+        })
+    </script>
 </form>
+}
 
 

@@ -9,32 +9,65 @@
 <table class="table table-bordered" style="margin-top: 20px; text-align: center">
     <tr>
 
-        <th>SERİ NO</th>
-        <th>SIRA NO</th>
+        <th>SERİ SIRA NO</th>
         <th>VERGİ DAİRESİ</th>
         <th>TARİH</th>
         <th>SAAT</th>
         <th>TOPLAM</th>
         <th>TESLİM EDEN</th>
         <th>TESLİM ALAN</th>
+
+
         <th style="color:darkmagenta">DETAYLAR</th>
         <th style="color:darkgoldenrod">GÜNCELLE</th>
+        <th style="color:darkkhaki">YENİ KALEM</th>
+
 
     </tr>
     @foreach (var f in Model)
     {
 <tr>
-    <td>@f.FaturaSeriNo</td>
-    <td>@f.FaturaSıraNo</td>
+    <td>@f.FaturaSeriNo @f.FaturaSıraNo</td>
     <td>@f.VergiDairesi</td>
     <td>@f.Tarih.ToShortDateString()</td>
     <td>@f.Saat</td>
-    <td>@f.Toplam</td>
+    <td>@f.Toplam ₺</td>
     <td>@f.TeslimEden</td>
     <td>@f.TeslimAlan</td>
     <td><a href="/Fatura/FaturaDetay/@f.Faturaid" class="btn btn-info" style="background-color:mediumpurple">Detay</a></td>
     <td><a href="/Fatura/FaturaGetir/@f.Faturaid" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="/Fatura/FaturaGetir/@f.Faturaid" class="btn btn-info" style="background-color:khaki">Yeni Kalem</a></td>
 </tr>
     }
     </table>
     <a href="/Fatura/FaturaEkle" class="btn btn-success">Yeni Fatura</a>
+    <br /><br />
+<button type="button" style="background-color:#ff9db8;" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup Diyalog Ekranı</h2>
+          <div class="modal-body">
+              <table class="table table-bordered">
+
+                  <tr>
+                      <th>SERİ NO</th>
+                      <th>SIRA NO</th>
+                      <th>TUTAR</th>
+                  </tr>
+                  @foreach(var x in Model)
+                  {
+                  <tr>
+                      <td>@x.FaturaSeriNo</td>
+                      <td>@x.FaturaSıraNo</td>
+                      <td>@x.Toplam ₺</td>
+                  </tr>
+                  }
+              </table>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+          </div>
+            </div>
+        </div>
+    </div>
+</div>

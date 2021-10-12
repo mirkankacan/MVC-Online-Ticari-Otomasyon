@@ -148,3 +148,9 @@ C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineT
 C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineTicariOtomasyon.dll
 C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineTicariOtomasyon.pdb
 C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineTicariOtomasyon.csproj.AssemblyReference.cache
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\bin\PagedList.dll
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\bin\PagedList.Mvc.dll
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\bin\PagedList.xml
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\bin\PagedList.Mvc.xml
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineTicariOtomasyon.Migrations.kargotest.resources
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Debug\MvcOnlineTicariOtomasyon.csproj.GenerateResource.cache
