@@ -1,0 +1,4 @@
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Release\MvcOnlineTicariOtomasyon.csproj.AssemblyReference.cache
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Release\MvcOnlineTicariOtomasyon.Migrations.kargotest.resources
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Release\MvcOnlineTicariOtomasyon.csproj.GenerateResource.cache
+C:\Users\kacan\Documents\GitHub\MVC-Online-Ticari-Otomasyon\obj\Release\MvcOnlineTicariOtomasyon.csproj.CoreCompileInputs.cache

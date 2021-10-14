@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <History>False|2021-10-12T13:40:51.5379907Z;False|2021-10-12T16:38:58.7410630+03:00;</History>
+    <_PublishTargetUrl>C:\Users\kacan\Desktop\pub</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>10/11/2021 17:13:33</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
