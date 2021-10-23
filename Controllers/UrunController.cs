@@ -13,6 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         // GET: Urun
         public ActionResult Index(string p)
         {
+            
             var urunler = from x in c.Uruns select x;
             if(!string.IsNullOrEmpty(p))
             {

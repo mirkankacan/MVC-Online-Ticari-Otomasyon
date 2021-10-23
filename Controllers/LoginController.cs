@@ -52,7 +52,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             if(bilgiler!=null)
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
-                Session["CariAd"] = bilgiler.CariMail.ToString();
+                Session["CariMail"] = bilgiler.CariMail.ToString();
                 return RedirectToAction("Index", "CariPanel");
             }
             else
@@ -74,7 +74,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd, false);
                 Session["KullaniciAd"] = bilgiler.KullaniciAd.ToString();
-                return RedirectToAction("Index", "CariPanel");
+                return RedirectToAction("Index", "Cariler");
             }
             else
             {
