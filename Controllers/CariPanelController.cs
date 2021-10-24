@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Web;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 using System.Web.Security;
+using System.Data.Entity.SqlServer;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -16,8 +17,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degerler = c.Carilers.FirstOrDefault(x => x.CariMail == mail);
-            ViewBag.ads = degerler.CariAd + " " + degerler.CariSoyad;
+            ViewBag.mail = mail;
+            var degerler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault();
+            ViewBag.mailid = mailid;
+            var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
+            ViewBag.toplamsatis = toplamsatis;
+            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplam = toplamtutar;
+            var toplamurun = c.SatisHarekets.Where(x =>x.Cariid== mailid).Sum(y => y.Adet);
+            ViewBag.urunler = toplamurun;
             return View(degerler);
         }
         public ActionResult Siparislerim()

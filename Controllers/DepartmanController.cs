@@ -6,10 +6,13 @@ using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
+
     public class DepartmanController : Controller
     {
         // GET: Departman
         Context c = new Context();
+        
         public ActionResult Index()
         {
             var degerler = c.Departmans.Where(x=>x.Durum==true).ToList();
