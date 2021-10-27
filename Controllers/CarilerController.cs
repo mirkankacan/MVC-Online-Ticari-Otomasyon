@@ -13,7 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var degerler = c.Carilers.ToList();
-            return View(degerler);
+            return View(degerler); 
         }
         [HttpGet]
         public ActionResult CariEkle()
